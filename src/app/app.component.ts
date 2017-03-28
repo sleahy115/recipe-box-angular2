@@ -14,6 +14,7 @@ export class AppComponent {
   ];
 
   selectedRecipe: Recipe = null;
+  showRecipe: Recipe = null;
 
   editRecipe(clickedRecipe) {
     this.selectedRecipe = clickedRecipe;
@@ -22,6 +23,10 @@ export class AppComponent {
   finishedEditing() {
     this.selectedRecipe = null;
   }
+  showRecipeDetails(clickedRecipe) {
+    this.showRecipe = clickedRecipe;
+  }
+
 }
 
 export class Recipe {

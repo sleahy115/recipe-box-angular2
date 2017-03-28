@@ -7,10 +7,15 @@
   background-color: teal;
   font-size: 30px;
   font-family: cursive;
+  color: white;
 }
 h1 {
   text-align: center;
   font-size: 35px;
   text-shadow: teal 1px 1px;
 
+}
+button {
+  float: right;
+  color: teal;
 }

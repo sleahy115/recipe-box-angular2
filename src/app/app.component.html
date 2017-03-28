@@ -1,11 +1,10 @@
-<h1>
-  {{title}}
-</h1>
+<div class="container">
+  <h1>{{title}}</h1>
   <div *ngFor="let currentRecipe of recipes" class="panel panel-default">
-    <div class="panel-heading">{{currentRecipe.title}}
+    <div (click)="showRecipeDetails(currentRecipe)" class="panel-heading">{{currentRecipe.title}}
       <button (click)="editRecipe(currentRecipe)">Edit</button>
     </div>
-    <div class="panel-body">
+    <div *ngIf="showRecipe" class="panel-body">
       <h2>Ingredients</h2>
       <li *ngFor="let ingredient of currentRecipe.ingredients">{{ingredient}}</li>
       <h2>Directions</h2>
@@ -13,14 +12,16 @@
         <li *ngFor="let direction of currentRecipe.directions">{{direction}}</li>
       </ol>
     </div>
-    <div *ngIf="selectedRecipe">
-      <h2>Edit {{selectedRecipe.title}}</h2>
-      <label>Title</label>
-      <input [(ngModel)]="selectedRecipe.title">
-      <label>Ingredients</label>
-      <input [(ngModel)]="selectedRecipe.ingredients">
-      <label>Directions</label>
-      <input [(ngModel)]="selectedRecipe.directions">
-      <button (click)="finishedEditing()">Done</button>
-    </div>
   </div>
+
+  <div *ngIf="selectedRecipe">
+    <h2>Edit {{selectedRecipe.title}}</h2>
+    <label>Title</label>
+    <input [(ngModel)]="selectedRecipe.title">
+    <label>Ingredients</label>
+    <input [(ngModel)]="selectedRecipe.ingredients">
+    <label>Directions</label>
+    <input [(ngModel)]="selectedRecipe.directions">
+    <button (click)="finishedEditing()">Done</button>
+  </div>
+</div>
