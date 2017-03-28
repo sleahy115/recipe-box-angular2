@@ -1,4 +1,14 @@
 <h1>
   {{title}}
-  <li *ngFor="let currentRecipe of recipes">{{currentRecipe.title}}</li>
+  <div *ngFor="let currentRecipe of recipes" class="panel panel-default">
+    <div class="panel-heading">{{currentRecipe.title}}</div>
+    <div class="panel-body">
+      <p>Ingredients</p>
+      <li *ngFor="let ingredient of currentRecipe.ingredients">{{ingredient}}</li>
+      <p>Directions</p>
+      <ol>
+        <li *ngFor="let direction of currentRecipe.directions">{{direction}}</li>
+      </ol>
+    </div>
+  </div>
 </h1>
