@@ -1,0 +1,16 @@
+.panel-body {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+.panel-heading {
+  background-color: teal;
+  font-size: 30px;
+  font-family: cursive;
+}
+h1 {
+  text-align: center;
+  font-size: 35px;
+  text-shadow: teal 1px 1px;
+
+}

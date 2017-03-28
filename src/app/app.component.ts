@@ -12,6 +12,16 @@ export class AppComponent {
     new Recipe('Tacos',['tortillas', 'meat', 'seasoning'],['brown meat', 'add seasoning', 'put into totilla']),
     new Recipe('Pasta',['tomatoes', 'shrimp', 'seasoning'],['cook tomoatoes', 'add chicken', 'stir into pasta'])
   ];
+
+  selectedRecipe: Recipe = null;
+
+  editRecipe(clickedRecipe) {
+    this.selectedRecipe = clickedRecipe;
+  }
+
+  finishedEditing() {
+    this.selectedRecipe = null;
+  }
 }
 
 export class Recipe {
