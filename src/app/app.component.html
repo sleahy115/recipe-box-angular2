@@ -1,27 +1,36 @@
 <div class="container">
   <h1>{{title}}</h1>
   <div *ngFor="let currentRecipe of recipes" class="panel panel-default">
-    <div (click)="showRecipeDetails(currentRecipe)" class="panel-heading">{{currentRecipe.title}}
-      <button (click)="editRecipe(currentRecipe)">Edit</button>
-    </div>
-  </div>
-    <div *ngIf="showRecipe" class="well">
-      <h2>Ingredients</h2>
-      <li *ngFor="let ingredient of showRecipe.ingredients">{{ingredient}}</li>
-      <h2>Directions</h2>
-      <ol>
-        <li *ngFor="let direction of showRecipe.directions">{{direction}}</li>
-      </ol>
-    </div>
+    <div (click)="showRecipeDetails(currentRecipe)" class="panel-heading">{{currentRecipe.title}}</div>
 
-  <div *ngIf="selectedRecipe">
+  </div>
+  <div *ngIf="showRecipe" class="well">
+    <h1>{{showRecipe.title}}</h1>
+    <h2>Ingredients</h2>
+    <li *ngFor="let ingredient of showRecipe.ingredients">{{ingredient}}</li>
+    <h2>Directions</h2>
+    <ol>
+      <li *ngFor="let direction of showRecipe.directions">{{direction}}</li>
+    </ol>
+    <button (click)="editRecipe(showRecipe)">Edit</button>
+    <button (click)="hideRecipe()" class="done">Done</button>
+    <br>
+  </div>
+
+  <div *ngIf="selectedRecipe" class="well">
     <h2>Edit {{selectedRecipe.title}}</h2>
     <label>Title</label>
-    <input [(ngModel)]="selectedRecipe.title">
+    <input [(ngModel)]="selectedRecipe.title" class="form-control">
+    <br>
     <label>Ingredients</label>
-    <input [(ngModel)]="selectedRecipe.ingredients">
+    <input [(ngModel)]="selectedRecipe.ingredients" class="form-control">
+    <br>
     <label>Directions</label>
-    <input [(ngModel)]="selectedRecipe.directions">
-    <button (click)="finishedEditing()">Done</button>
+    <input [(ngModel)]="selectedRecipe.directions" class="form-control">
+    <br>
+    <button (click)="finishedEditing()" class='done'>Done</button>
+    <br>
+    <br>
+    <br>
   </div>
 </div>

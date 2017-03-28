@@ -27,6 +27,10 @@ export class AppComponent {
     this.showRecipe = currentRecipe;
   }
 
+  hideRecipe() {
+    this.showRecipe = null;
+  }
+
 }
 
 export class Recipe {

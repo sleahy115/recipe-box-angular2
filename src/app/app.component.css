@@ -13,9 +13,33 @@ h1 {
   text-align: center;
   font-size: 35px;
   text-shadow: teal 1px 1px;
+}
 
+.panel-heading:hover {
+  color:gray;
+  text-decoration: underline;
+}
+
+h2 {
+  font-size: 35px;
+  text-shadow: teal 1px 1px;
 }
 button {
-  float: right;
+  /*float: right;*/
   color: teal;
+  font-family: cursive;
+  font-size: 30px;
+  margin: 10px;
+}
+
+.done {
+  float: left;
+}
+
+.well {
+  background-color: rgba(0,128,128, 0.5);
+}
+
+.well li {
+  font-size: 20px;
 }
