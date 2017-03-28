@@ -23,8 +23,8 @@ export class AppComponent {
   finishedEditing() {
     this.selectedRecipe = null;
   }
-  showRecipeDetails(clickedRecipe) {
-    this.showRecipe = clickedRecipe;
+  showRecipeDetails(currentRecipe) {
+    this.showRecipe = currentRecipe;
   }
 
 }

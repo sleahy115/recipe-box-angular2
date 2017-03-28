@@ -4,15 +4,15 @@
     <div (click)="showRecipeDetails(currentRecipe)" class="panel-heading">{{currentRecipe.title}}
       <button (click)="editRecipe(currentRecipe)">Edit</button>
     </div>
-    <div *ngIf="showRecipe" class="panel-body">
+  </div>
+    <div *ngIf="showRecipe" class="well">
       <h2>Ingredients</h2>
-      <li *ngFor="let ingredient of currentRecipe.ingredients">{{ingredient}}</li>
+      <li *ngFor="let ingredient of showRecipe.ingredients">{{ingredient}}</li>
       <h2>Directions</h2>
       <ol>
-        <li *ngFor="let direction of currentRecipe.directions">{{direction}}</li>
+        <li *ngFor="let direction of showRecipe.directions">{{direction}}</li>
       </ol>
     </div>
-  </div>
 
   <div *ngIf="selectedRecipe">
     <h2>Edit {{selectedRecipe.title}}</h2>
